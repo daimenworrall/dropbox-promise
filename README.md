@@ -12,13 +12,13 @@
 ### Include
 
   Add the following to the top of your project (with the other dependencies):
-  
-    ```javascript
-    const dropbox = require('dropbox-promise');
-    const key = ""; //Dropbox API Key
-    const secret = ""; //Dropbox API Secret Key
-    const redirect_url = ""; //URL that the user will be sent to after Dropbox authentication
-    ```
+
+  ```javascript
+  const dropbox = require('dropbox-promise');
+  const key = ""; //Dropbox API Key
+  const secret = ""; //Dropbox API Secret Key
+  const redirect_url = ""; //URL that the user will be sent to after Dropbox authentication
+  ```
 
 ### Authentication
 
