@@ -17,5 +17,8 @@
     "api"
   ],
   "author": "Daimen Worrall",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
 }
