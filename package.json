@@ -1,0 +1,21 @@
+{
+  "name": "dropbox-promise",
+  "version": "0.0.1",
+  "description": "Dropbox REST API Promise Wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daimenworrall/dropbox-promise.git"
+  },
+  "keywords": [
+    "dropbox",
+    "rest",
+    "promise",
+    "api"
+  ],
+  "author": "Daimen Worrall",
+  "license": "ISC"
+}
