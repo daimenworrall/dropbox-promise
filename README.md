@@ -77,4 +77,6 @@
   api.account() //Returns information about the users account
   api.storage() //Returns information regarding the users storage. How much they have and how much they've used
   api.createFolder(path) //Create a folder in the users Dropbox (in our application folder if set up that way)
+  api.listFolder(path, recursive, include_media_info, include_deleted, include_has_explicit_shared_members, include_mounted_folders) //List the contents of a folder. All are optional except path
+  api.getThumbnail(path, format, size) //Get a thumbnail for a file. Returns a downloaded image. All are optional except path
   ```

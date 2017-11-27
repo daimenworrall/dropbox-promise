@@ -114,6 +114,56 @@ exports.api = function(access_token) {
           return resolve(body);
         });
       });
+    },
+    listFolder: function(path, recursive, include_media_info, include_deleted, include_has_explicit_shared_members, include_mounted_folders) {
+      return new Promise(function(resolve, reject) {
+        if (path === "") {
+          return reject("Missing Path.");
+        };
+
+        let query = {
+          url: "https://api.dropboxapi.com/2/files/list_folder",
+          headers: {
+            Authorization: "Bearer " + access_token
+          },
+          json: {
+            "path": path,
+            "recursive": recursive || false,
+            "include_media_info": include_media_info || false,
+            "include_deleted": include_deleted || false,
+            "include_has_explicit_shared_members": include_has_explicit_shared_members || false,
+            "include_mounted_folders": include_mounted_folders || true
+          }
+        }
+
+        request.post(query, function(error, result, body) {
+          if (error) return reject(error);
+          return resolve(body);
+        });
+      });
+    },
+    getThumbnail: function(path, format, size) {
+      return new Promise(function(resolve, reject) {
+        if (path === "") {
+          return reject("Missing Path.");
+        };
+
+        format = format || "jpeg";
+        size = size || "w128h128";
+
+        let query = {
+          url: "https://content.dropboxapi.com/2/files/get_thumbnail",
+          headers: {
+            "Authorization": "Bearer " + access_token,
+            "Dropbox-API-Arg": "{\"path\": \""+ path + "\",\"format\": \"" + format + "\",\"size\": \"" + size + "\"}"
+          }
+        }
+
+        request.post(query, function(error, result, body) {
+          if (error) return reject(error);
+          return resolve(body);
+        });
+      });
     }
 
   }
